@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurveda AI Chatbot</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="title">
+        <h1>AYURVEDA AI</h1>
+    </div>
+    <div class="container">
+        <div class="input-area">
+            <textarea id="user-input" placeholder="Ask a question about Ayurveda..."></textarea>
+            <button id="submit-btn">Ask</button>
+        </div>
+        <div id="loading" class="loading" style="display: none;">
+            <div class="loader"></div>
+            <p>Processing your request...</p>
+        </div>
+        <div id="response-area">
+            <h2>Response:</h2>
+            <div id="response" class="response"></div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#submit-btn').click(function() {
+                var queryText = $('#user-input').val();
+                if (queryText) {
+                    $('#loading').show(); // Show loading indicator
+                    $('#response').empty(); // Clear previous response
+                    
+                    $.ajax({
+                        url: '/query',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({ query_text: queryText }),
+                        success: function(data) {
+                            $('#response').text(data.response);
+                        },
+                        error: function() {
+                            $('#response').text("An error occurred while processing your request.");
+                        },
+                        complete: function() {
+                            $('#loading').hide(); // Hide loading indicator
+                        }
+                    });
+                } else {
+                    alert("Please enter a question.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

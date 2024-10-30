@@ -1,0 +1,115 @@
+/* Background styling */
+body {
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+/* Title styling */
+.title h1 {
+    font-size: 3em;
+    color: #00e0ff;
+    text-shadow: 0 0 5px #00e0ff, 0 0 10px #00e0ff, 0 0 15px #00e0ff, 0 0 20px #00e0ff, 0 0 25px #00e0ff, 0 0 30px #00e0ff;
+    animation: glow 1.5s infinite alternate;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Glowing effect */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #00e0ff, 0 0 10px #00e0ff, 0 0 15px #00e0ff, 0 0 20px #00e0ff, 0 0 25px #00e0ff, 0 0 30px #00e0ff, 0 0 35px #00e0ff;
+    }
+    to {
+        text-shadow: 0 0 10px #00e0ff, 0 0 20px #00e0ff, 0 0 30px #00e0ff, 0 0 40px #00e0ff, 0 0 50px #00e0ff, 0 0 60px #00e0ff, 0 0 70px #00e0ff;
+    }
+}
+
+/* Centered container styling */
+.container {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0 0 15px rgba(0, 224, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Text area and button styling */
+.input-area {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #00e0ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #00b4cc;
+}
+
+/* Loading animation */
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.loader {
+    border: 6px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 6px solid #00e0ff;
+    border-right: 6px solid #ff00e0;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 5px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Response styling */
+#response-area {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.response {
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    min-height: 50px;
+}
