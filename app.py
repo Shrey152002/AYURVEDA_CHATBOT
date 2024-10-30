@@ -14,7 +14,7 @@ from tqdm.auto import tqdm
 app = Flask(__name__)
 
 # Initialize Pinecone with API key and serverless spec
-API_KEY = "ec12b818-9267-4a8d-b45c-613b1c75343a" # Replace with your actual API key
+API_KEY = "xxxxxxxxx" # Replace with your actual API key
 INDEX_NAME = "ayurveda"  # Replace with your actual index name
 DATA_DIR = "C://Users//Shreyash Verma//AYURVEDA_CHATBOT//data"  # Directory containing PDFs
 MODEL_PATH = "C://Users//Shreyash Verma//AYURVEDA_CHATBOT//model//llama-2-7b-chat.ggmlv3.q4_0.bin"  # Replace with your model path
